@@ -1,0 +1,98 @@
+{
+    "common": {
+        "name": "treebuilder",
+        "version": "0.0.1",
+        "news": {
+            "0.0.1": {
+                "en": "initial release",
+                "de": "Erstveröffentlichung",
+                "ru": "Начальная версия",
+                "pt": "lançamento inicial",
+                "nl": "Eerste uitgave",
+                "fr": "Première version",
+                "it": "Versione iniziale",
+                "es": "Versión inicial",
+                "pl": "Pierwsze wydanie",
+                "zh-cn": "首次出版"
+            }
+        },
+        "title": "TreeBuilder",
+        "titleLang": {
+            "en": "TreeBuilder",
+            "de": "TreeBuilder",
+            "ru": "TreeBuilder",
+            "pt": "TreeBuilder",
+            "nl": "TreeBuilder",
+            "fr": "TreeBuilder",
+            "it": "TreeBuilder",
+            "es": "TreeBuilder",
+            "pl": "TreeBuilder",
+            "zh-cn": "树生成器"
+        },
+        "desc": {
+            "en": "treebuilder",
+            "de": "Baumbauer",
+            "ru": "деревостроитель",
+            "pt": "treebuilder",
+            "nl": "bomenbouwer",
+            "fr": "treebuilder",
+            "it": "treebuilder",
+            "es": "treebuilder",
+            "pl": "treebuilder",
+            "zh-cn": "建树者"
+        },
+        "authors": [
+            "tyantreides <t@pocket.de>"
+        ],
+        "keywords": [
+            "ioBroker",
+            "template",
+            "Smart Home",
+            "home automation"
+        ],
+        "license": "MIT",
+        "platform": "Javascript/Node.js",
+        "main": "main.js",
+        "icon": "treebuilder.png",
+        "enabled": true,
+        "extIcon": "https://raw.githubusercontent.com/tyantreides/ioBroker.treebuilder/main/admin/treebuilder.png",
+        "readme": "https://github.com/tyantreides/ioBroker.treebuilder/blob/main/README.md",
+        "loglevel": "info",
+        "mode": "daemon",
+        "type": "logic",
+        "compact": true,
+        "connectionType": "local",
+        "dataSource": "poll",
+        "materialize": true,
+        "materializeTab": true,
+        "adminTab": {
+            "singleton": true,
+            "name": {
+                "en": "TreeBuilder",
+                "de": "TreeBuilder",
+                "ru": "TreeBuilder",
+                "pt": "TreeBuilder",
+                "nl": "TreeBuilder",
+                "fr": "TreeBuilder",
+                "it": "TreeBuilder",
+                "es": "TreeBuilder",
+                "pl": "TreeBuilder",
+                "zh-cn": "树生成器"
+            },
+            "link": "",
+            "fa-icon": "info"
+        },
+        "eraseOnUpload": true,
+        "dependencies": [
+            {
+                "js-controller": ">=2.0.0"
+            }
+        ]
+    },
+    "native": {
+        "option1": true,
+        "option2": "42"
+    },
+    "objects": [],
+    "instanceObjects": []
+}
