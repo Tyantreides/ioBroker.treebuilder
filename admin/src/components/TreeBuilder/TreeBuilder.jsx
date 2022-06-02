@@ -4,7 +4,7 @@
  * MIT License
  *
  **/
-import React, {useContext, useEffect} from 'react';
+import React, {useContext} from 'react';
 import { TreeBuilderContext } from './Core/TreeBuilderContext';
 import TreeLayout from './Layout/TreeLayout';
 import LoaderFullScreen from './Loaders/LoaderFullScreen';

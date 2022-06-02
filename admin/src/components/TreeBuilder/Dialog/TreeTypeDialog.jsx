@@ -27,7 +27,7 @@ import { v4 as uuidv4 } from 'uuid';
 import * as Tools from '../../../modules/TreeBuilder/Tools';
 import { Chip, IconButton, Toolbar, Tooltip } from '@material-ui/core';
 
-const TreeTypeDialog = ({closeCallback = false, saveCallback = false, classes}) => {
+const TreeTypeDialog = ({closeCallback = false, classes}) => {
 
     const treeBuilderContext = useContext(TreeBuilderContext);
 
@@ -53,7 +53,7 @@ const TreeTypeDialog = ({closeCallback = false, saveCallback = false, classes}) 
     const onClose = () => {
         treeBuilderContext.changeState({type: globalActions.SET.DIALOG.TREETYPES.VISIBLE, payload: false});
         changeType(getNewType());
-        closeCallback ? closeCallback(typeState) : null;
+        closeCallback ? closeCallback(type) : null;
     };
 
 
@@ -71,15 +71,11 @@ const TreeTypeDialog = ({closeCallback = false, saveCallback = false, classes}) 
         changeType(getNewType());
     };
 
-    const onEdit = (type) => {
+    const onEdit = () => {
 
     };
 
-    const onDelete = (type) => {
-
-    };
-
-    const onSave = async () => {
+    const onDelete = () => {
 
     };
 

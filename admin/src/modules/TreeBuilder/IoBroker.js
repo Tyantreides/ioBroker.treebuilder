@@ -30,8 +30,6 @@ export default class ioBroker {
             },
             type: options.type
         };
-        // console.log('[ioBroker]: createObject obj:')
-        // console.log(obj)
         await this.socket.setObject(options.id, obj);
     }
 }

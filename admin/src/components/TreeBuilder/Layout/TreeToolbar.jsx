@@ -45,7 +45,7 @@ const TreeToolbar = ({classes}) => {
                     </Tooltip> */}
                     <Tooltip title="Neu laden">
                         <IconButton onClick={() => {/* refresh list handle */}} disabled={false}>
-                            {false ? <CircularProgress size={20} /> : <IconRefresh />}
+                            {<IconRefresh />}
                         </IconButton>
                     </Tooltip>
                     <Tooltip title="Alles aufklappen">

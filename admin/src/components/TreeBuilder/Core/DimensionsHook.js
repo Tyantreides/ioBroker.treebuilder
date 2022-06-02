@@ -4,34 +4,34 @@
  * MIT License
  *
  **/
-import { useState, useEffect } from 'react';
-import EventEmitter from './EventEmitter';
-import {treeActions} from './actions';
+// import { useState, useEffect } from 'react';
+// import EventEmitter from './EventEmitter';
+// import {treeActions} from './actions';
 
-function getDimensions() {
-    const { innerWidth: width, innerHeight: height } = window;
-    return {
-        width,
-        height
-    };
-}
+// function getDimensions() {
+//     const { innerWidth: width, innerHeight: height } = window;
+//     return {
+//         width,
+//         height
+//     };
+// }
 /**
  *
  * @returns Work in progress
  */
-export default function Dimensions() {
-    const [windowDimensions, setWindowDimensions] = useState(getDimensions());
+// export default function Dimensions() {
+//     const [windowDimensions, setWindowDimensions] = useState(getDimensions());
 
-    useEffect(() => {
-        function handleResize() {
-            const {width, height} = {...getDimensions()};
-            EventEmitter.emit('dispatch', treeActions.VIEW.SET.DIMENSIONS, [width,height]);
-            setWindowDimensions({width, height});
-        }
+//     useEffect(() => {
+//         function handleResize() {
+//             const {width, height} = {...getDimensions()};
+//             EventEmitter.emit('dispatch', treeActions.VIEW.SET.DIMENSIONS, [width,height]);
+//             setWindowDimensions({width, height});
+//         }
 
-        window.addEventListener('resize', handleResize);
-        return () => window.removeEventListener('resize', handleResize);
-    }, []);
+//         window.addEventListener('resize', handleResize);
+//         return () => window.removeEventListener('resize', handleResize);
+//     }, []);
 
-    return windowDimensions;
-}
+//     return windowDimensions;
+// }

@@ -18,7 +18,7 @@ import TreeTypeDialog from '../Dialog/TreeTypeDialog';
 
 const TreeLayout = ({classes}) => {
 
-    const dialogCallback = (itemState) => {
+    const dialogCallback = () => {
         EventEmitter.emit('reloadTree');
     };
 

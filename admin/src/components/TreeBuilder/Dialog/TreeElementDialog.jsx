@@ -26,7 +26,6 @@ import { defaultItem } from '../Core/Constants/TreeElements';
 import { useContext } from 'react';
 import { TreeBuilderContext } from '../Core/TreeBuilderContext';
 import { globalActions } from '../Core/actions';
-import { useEffect } from 'react';
 import { v4 as uuidv4 } from 'uuid';
 import {dialogActions} from '../Core/Constants/DialogActions';
 import * as Tools from '../../../modules/TreeBuilder/Tools';
