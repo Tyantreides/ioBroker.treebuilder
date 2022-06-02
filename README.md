@@ -1,4 +1,4 @@
-![Logo](admin/treebuilder.png)
+![Logo](admin/static/assets/treebuilder.png)
 # ioBroker.treebuilder
 
 [![NPM version](https://img.shields.io/npm/v/iobroker.treebuilder.svg)](https://www.npmjs.com/package/iobroker.treebuilder)
