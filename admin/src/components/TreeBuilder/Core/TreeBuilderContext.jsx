@@ -5,14 +5,14 @@
  * MIT License
  *
  **/
-import React, {useContext} from "react";
-import {GlobalContext} from "./Store";
-import ioBroker from "../../../modules/TreeBuilder/IoBroker";
+import React, {useContext} from 'react';
+import {GlobalContext} from './Store';
+import ioBroker from '../../../modules/TreeBuilder/IoBroker';
 export const TreeBuilderContext = React.createContext({});
 export const TreeBuilderProvider = ({socketInstance, tabAppClass, children}) => {
-    const iobData = new ioBroker(socketInstance)
+    const iobData = new ioBroker(socketInstance);
     // @ts-ignore
-    const [state, dispatch] = useContext(GlobalContext)
+    const [state, dispatch] = useContext(GlobalContext);
     const context = {
         state,
         changeState: dispatch,
@@ -20,10 +20,10 @@ export const TreeBuilderProvider = ({socketInstance, tabAppClass, children}) => 
         iobData,
         adapterName: tabAppClass.adapterName,
         adapterInstance: tabAppClass.instance,
-    }
+    };
     return (
         <TreeBuilderContext.Provider value={context}>
             {children}
         </TreeBuilderContext.Provider>
-    )
-}
+    );
+};

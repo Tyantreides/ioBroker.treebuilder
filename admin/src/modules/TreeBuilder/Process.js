@@ -1,11 +1,11 @@
-import { getParentPath , cloneObject } from "./Tools"
+import { getParentPath , cloneObject } from './Tools';
 export class Process {
     constructor(treeBuilderContext) {
-        this.context = treeBuilderContext
-        this.adapter = treeBuilderContext.state.adapterName
-        this.instance = treeBuilderContext.state.adapterInstance
+        this.context = treeBuilderContext;
+        this.adapter = treeBuilderContext.state.adapterName;
+        this.instance = treeBuilderContext.state.adapterInstance;
     }
-    
+
     async buildTreeItems() {
         // console.log("[Process]: --------------------------------------------------")
         const items = [];
@@ -25,7 +25,7 @@ export class Process {
     }
     async buildDepths(treeItems) {
 
-        
+
 
     }
 }

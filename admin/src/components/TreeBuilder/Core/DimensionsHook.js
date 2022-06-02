@@ -5,8 +5,8 @@
  *
  **/
 import { useState, useEffect } from 'react';
-import EventEmitter from "./EventEmitter";
-import {treeActions} from "./actions";
+import EventEmitter from './EventEmitter';
+import {treeActions} from './actions';
 
 function getDimensions() {
     const { innerWidth: width, innerHeight: height } = window;
@@ -16,7 +16,7 @@ function getDimensions() {
     };
 }
 /**
- * 
+ *
  * @returns Work in progress
  */
 export default function Dimensions() {
@@ -24,7 +24,7 @@ export default function Dimensions() {
 
     useEffect(() => {
         function handleResize() {
-            let {width, height} = {...getDimensions()};
+            const {width, height} = {...getDimensions()};
             EventEmitter.emit('dispatch', treeActions.VIEW.SET.DIMENSIONS, [width,height]);
             setWindowDimensions({width, height});
         }

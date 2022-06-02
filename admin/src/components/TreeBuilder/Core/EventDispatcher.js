@@ -1,6 +1,6 @@
-import React, {useEffect, useContext} from 'react'
-import {GlobalContext} from "./Store";
-import EventEmitter from "./EventEmitter";
+import React, {useEffect, useContext} from 'react';
+import {GlobalContext} from './Store';
+import EventEmitter from './EventEmitter';
 
 const EventDispatcher = () => {
     const [, dispatch] = useContext(GlobalContext);
@@ -9,13 +9,13 @@ const EventDispatcher = () => {
             dispatch({
                 type: actionType,
                 payload: payload,
-            })
-        }
+            });
+        };
         const dispatcher = EventEmitter.addListener('dispatch', onDispatch);
         return ()=>{
             dispatcher.remove();
-        }
-    },[])
-    return null
-}
+        };
+    },[]);
+    return null;
+};
 export default EventDispatcher;

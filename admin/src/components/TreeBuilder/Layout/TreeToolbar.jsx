@@ -4,7 +4,7 @@
  * MIT License
  *
  **/
-import React, {useContext} from "react";
+import React, {useContext} from 'react';
 import IconButton from '@material-ui/core/IconButton';
 import { MdAdd as IconAdd } from 'react-icons/md';
 import { MdRefresh as IconRefresh } from 'react-icons/md';
@@ -12,11 +12,11 @@ import { MdRefresh as IconRefresh } from 'react-icons/md';
 import { FaFolderOpen as IconFolderOpened } from 'react-icons/fa';
 import { FaFolder as IconFolder } from 'react-icons/fa';
 import { Toolbar, Tooltip } from '@material-ui/core';
-import {withStyles} from "@material-ui/core/styles";
+import {withStyles} from '@material-ui/core/styles';
 
-import { styles } from "./styles";
-import { TreeBuilderContext } from "../Core/TreeBuilderContext";
-import { globalActions } from "../Core/actions";
+import { styles } from './styles';
+import { TreeBuilderContext } from '../Core/TreeBuilderContext';
+import { globalActions } from '../Core/actions';
 
 const TreeToolbar = ({classes}) => {
     const treeBuilderContext = useContext(TreeBuilderContext);
@@ -29,7 +29,7 @@ const TreeToolbar = ({classes}) => {
                         <div>
                             <IconButton
                                 disabled={false}
-                                onClick={() => { treeBuilderContext.changeState({type: globalActions.SET.DIALOG.TREEELEMENTS.VISIBLE, payload: true}) }}>
+                                onClick={() => { treeBuilderContext.changeState({type: globalActions.SET.DIALOG.TREEELEMENTS.VISIBLE, payload: true}); }}>
                                 <IconAdd />
                             </IconButton>
                         </div>
@@ -65,7 +65,7 @@ const TreeToolbar = ({classes}) => {
                 </div>
                 <div className={classes.emptyBlockFlex} />
                 <div className={classes.wrapperName}>
-                    {<img src="static/assets/treebuilder.png" width={"50px"} height={"50px"}></img>}
+                    {<img src="static/assets/treebuilder.png" width={'50px'} height={'50px'}></img>}
                 </div>
             </Toolbar>
         </>

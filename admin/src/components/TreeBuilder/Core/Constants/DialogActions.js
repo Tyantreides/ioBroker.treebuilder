@@ -8,4 +8,4 @@ export const dialogActions = {
     new: 'new',
     edit: 'edit',
     delete: 'delete',
-}
+};

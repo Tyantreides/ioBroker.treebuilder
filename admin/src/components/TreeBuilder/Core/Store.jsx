@@ -5,8 +5,8 @@
  *
  **/
 import React, {useReducer} from 'react';
-import { initialState } from "./Constants";
-import {Reducer} from "./Reducer";
+import { initialState } from './Constants';
+import {Reducer} from './Reducer';
 export const GlobalContext = React.createContext(initialState);
 const Store = ({children}) => {
     const [state, dispatch] = useReducer(Reducer, initialState);

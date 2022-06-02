@@ -61,4 +61,4 @@ export const treeTypes = [
         color: false,
         icon: null,
     },
-]
+];

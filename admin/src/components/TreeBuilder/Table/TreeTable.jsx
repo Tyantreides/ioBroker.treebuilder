@@ -4,18 +4,18 @@
  * MIT License
  *
  **/
-import React, {useContext} from "react";
-import Table from "@material-ui/core/Table";
-import TableHead from "@material-ui/core/TableHead";
-import TableRow from "@material-ui/core/TableRow";
-import TableCell from "@material-ui/core/TableCell";
-import TableBody from "@material-ui/core/TableBody";
-import Paper from "@material-ui/core/Paper";
-import {withStyles} from "@material-ui/core/styles";
+import React, {useContext} from 'react';
+import Table from '@material-ui/core/Table';
+import TableHead from '@material-ui/core/TableHead';
+import TableRow from '@material-ui/core/TableRow';
+import TableCell from '@material-ui/core/TableCell';
+import TableBody from '@material-ui/core/TableBody';
+import Paper from '@material-ui/core/Paper';
+import {withStyles} from '@material-ui/core/styles';
 
-import { styles } from "./styles";
-import { TreeBuilderContext } from "../Core/TreeBuilderContext";
-import TreeItem from "./TreeItem";
+import { styles } from './styles';
+import { TreeBuilderContext } from '../Core/TreeBuilderContext';
+import TreeItem from './TreeItem';
 
 const TreeTable = ({classes}) => {
     const treeBuilderContext = useContext(TreeBuilderContext);
@@ -26,9 +26,9 @@ const TreeTable = ({classes}) => {
             .map(item => {
                 return (
                     <TreeItem key={item._id} items={items} item={item} classes={classes} />
-                )
-            })
-    }
+                );
+            });
+    };
 
     return (
         <>
@@ -47,6 +47,6 @@ const TreeTable = ({classes}) => {
                 </Table>
             </Paper>
         </>
-    )
-}
+    );
+};
 export default withStyles(styles)(TreeTable);

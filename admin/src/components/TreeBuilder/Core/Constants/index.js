@@ -19,7 +19,7 @@ export const initialState = {
     treeTypes:[],
     test: false,
     tree: {
-        rootItem: "root",
+        rootItem: 'root',
         selectedItem: false,
         expandedItems: [],
         windowWidth: 1980,
@@ -35,7 +35,7 @@ export const initialState = {
         visible: false,
         action: 'new',
     }
-}
+};
 
 export const prompt = `
 ████████╗██████╗ ███████╗███████╗██████╗ ██╗   ██╗██╗██╗     ██████╗ ███████╗██████╗ 
