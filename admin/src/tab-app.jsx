@@ -2,6 +2,11 @@ import React from "react";
 import { withStyles } from "@material-ui/core/styles";
 
 import GenericApp from "@iobroker/adapter-react/GenericApp";
+import TreeBuilder from "./components/TreeBuilder/TreeBuilder";
+import Store from "./components/TreeBuilder/Core/Store";
+import Setup from "./components/TreeBuilder/Core/Setup";
+import EventDispatcher from "./components/TreeBuilder/Core/EventDispatcher"
+import { TreeBuilderProvider } from "./components/TreeBuilder/Core/TreeBuilderContext";
 
 /**
  * @type {(_theme: Theme) => import("@material-ui/styles").StyleRules}
@@ -43,7 +48,13 @@ class TabApp extends GenericApp {
 
         return (
             <div className="App">
-                Add your components here.
+                <Store>
+                    <TreeBuilderProvider socketInstance={this.socket} tabAppClass={this}>
+                        <EventDispatcher />
+                        <TreeBuilder />
+                        <Setup />
+                    </TreeBuilderProvider>
+                </Store>
                 {this.renderError()}
                 {this.renderToast()}
             </div>

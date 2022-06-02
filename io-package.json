@@ -5,55 +5,32 @@
         "news": {
             "0.0.1": {
                 "en": "initial release",
-                "de": "Erstveröffentlichung",
-                "ru": "Начальная версия",
-                "pt": "lançamento inicial",
-                "nl": "Eerste uitgave",
-                "fr": "Première version",
-                "it": "Versione iniziale",
-                "es": "Versión inicial",
-                "pl": "Pierwsze wydanie",
-                "zh-cn": "首次出版"
+                "de": "Erstveröffentlichung"
             }
         },
         "title": "TreeBuilder",
         "titleLang": {
             "en": "TreeBuilder",
-            "de": "TreeBuilder",
-            "ru": "TreeBuilder",
-            "pt": "TreeBuilder",
-            "nl": "TreeBuilder",
-            "fr": "TreeBuilder",
-            "it": "TreeBuilder",
-            "es": "TreeBuilder",
-            "pl": "TreeBuilder",
-            "zh-cn": "树生成器"
+            "de": "TreeBuilder"
         },
         "desc": {
-            "en": "treebuilder",
-            "de": "Baumbauer",
-            "ru": "деревостроитель",
-            "pt": "treebuilder",
-            "nl": "bomenbouwer",
-            "fr": "treebuilder",
-            "it": "treebuilder",
-            "es": "treebuilder",
-            "pl": "treebuilder",
-            "zh-cn": "建树者"
+            "en": "Tool to organize devices in custom tree structure",
+            "de": "Tool für das Organisieren von Geräten in einer benutzerdefinierten Baumstruktur"
         },
         "authors": [
-            "tyantreides <t@pocket.de>"
+            "tyantreides <tyantreides@pocketpromotion.de>"
         ],
         "keywords": [
             "ioBroker",
             "template",
             "Smart Home",
+            "organizer",
             "home automation"
         ],
         "license": "MIT",
         "platform": "Javascript/Node.js",
         "main": "main.js",
-        "icon": "treebuilder.png",
+        "icon": "static/assets/treebuilder.png",
         "enabled": true,
         "extIcon": "https://raw.githubusercontent.com/tyantreides/ioBroker.treebuilder/main/admin/treebuilder.png",
         "readme": "https://github.com/tyantreides/ioBroker.treebuilder/blob/main/README.md",
@@ -61,23 +38,15 @@
         "mode": "daemon",
         "type": "logic",
         "compact": true,
-        "connectionType": "local",
-        "dataSource": "poll",
+        "connectionType": "none",
+        "dataSource": "none",
         "materialize": true,
         "materializeTab": true,
         "adminTab": {
             "singleton": true,
             "name": {
                 "en": "TreeBuilder",
-                "de": "TreeBuilder",
-                "ru": "TreeBuilder",
-                "pt": "TreeBuilder",
-                "nl": "TreeBuilder",
-                "fr": "TreeBuilder",
-                "it": "TreeBuilder",
-                "es": "TreeBuilder",
-                "pl": "TreeBuilder",
-                "zh-cn": "树生成器"
+                "de": "TreeBuilder"
             },
             "link": "",
             "fa-icon": "info"
