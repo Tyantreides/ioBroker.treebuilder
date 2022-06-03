@@ -45,11 +45,14 @@ export const Reducer = (state, action) => {
         case globalActions.SET.DIALOG.VISIBLE:
             currentState.dialog.visible = action.payload;
             return currentState;
-        case globalActions.SET.DIALOG.TREEELEMENTS.VISIBLE:
-            currentState.dialog.treeElements.visible = action.payload;
+        case globalActions.SET.DIALOG.TREEELEMENTS.NEW.VISIBLE:
+            currentState.dialog.treeElements.new.visible = action.payload;
             return currentState;
-        case globalActions.SET.DIALOG.TREEELEMENTS.ACTION:
-            currentState.dialog.treeElements.action = action.payload;
+        case globalActions.SET.DIALOG.TREEELEMENTS.EDIT.VISIBLE:
+            currentState.dialog.treeElements.edit.visible = action.payload;
+            return currentState;
+        case globalActions.SET.DIALOG.TREEELEMENTS.EDIT.ITEM:
+            currentState.dialog.treeElements.edit.item = action.payload;
             return currentState;
         case globalActions.SET.DIALOG.TREETYPES.VISIBLE:
             currentState.dialog.treeTypes.visible = action.payload;

@@ -26,14 +26,17 @@ export const initialState = {
     },
     dialog: {
         treeElements: {
-            visible: false,
-            action: 'new',
+            new: {
+                visible: false
+            },
+            edit: {
+                visible: false,
+                item: false
+            }
         },
         treeTypes: {
             visible: false,
         },
-        visible: false,
-        action: 'new',
     }
 };
 

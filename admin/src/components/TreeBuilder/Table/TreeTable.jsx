@@ -16,9 +16,22 @@ import {withStyles} from '@material-ui/core/styles';
 import { styles } from './styles';
 import { TreeBuilderContext } from '../Core/TreeBuilderContext';
 import TreeItem from './TreeItem';
+import TreeElementNewDialog from '../Dialog/TreeElementNewDialog';
+import TreeElementEditDialog from '../Dialog/TreeElementEditDialog';
+import EventEmitter from '../Core/EventEmitter';
 
 const TreeTable = ({classes}) => {
     const treeBuilderContext = useContext(TreeBuilderContext);
+    const isNewDialogVisible = treeBuilderContext.state.dialog.treeElements.new.visible;
+    const isEditDialogVisible = treeBuilderContext.state.dialog.treeElements.edit.visible;
+
+
+    const releadTree = () => {
+        EventEmitter.emit('reloadTree');
+    };
+
+    const newCallback = () => {releadTree();};
+    const editCallback = () => {releadTree();};
 
     const renderAllItems = (items) => {
         return items
@@ -46,6 +59,8 @@ const TreeTable = ({classes}) => {
                     <TableBody>{renderAllItems(treeBuilderContext.state.treeItems)}</TableBody>
                 </Table>
             </Paper>
+            {isNewDialogVisible ? <TreeElementNewDialog saveCallback={newCallback} /> : null}
+            {isEditDialogVisible ? <TreeElementEditDialog saveCallback={editCallback} /> : null}
         </>
     );
 };

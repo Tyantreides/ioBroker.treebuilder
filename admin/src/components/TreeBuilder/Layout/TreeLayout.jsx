@@ -12,15 +12,8 @@ import {withStyles} from '@material-ui/core/styles';
 
 import TreeToolbar from './TreeToolbar';
 import TreeTable from '../Table/TreeTable';
-import TreeElementDialog from '../Dialog/TreeElementDialog';
-import EventEmitter from '../Core/EventEmitter';
-import TreeTypeDialog from '../Dialog/TreeTypeDialog';
 
 const TreeLayout = ({classes}) => {
-
-    const dialogCallback = () => {
-        EventEmitter.emit('reloadTree');
-    };
 
     return (
         <>
@@ -28,8 +21,6 @@ const TreeLayout = ({classes}) => {
             <div className={classes.tab}>
                 <TreeToolbar />
                 <TreeTable />
-                <TreeElementDialog saveCallback={dialogCallback} />
-                <TreeTypeDialog />
             </div>
             {/* </DndProvider> */}
         </>

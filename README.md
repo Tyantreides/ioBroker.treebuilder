@@ -3,9 +3,9 @@
 
 [![NPM version](https://img.shields.io/npm/v/iobroker.treebuilder.svg)](https://www.npmjs.com/package/iobroker.treebuilder)
 [![Downloads](https://img.shields.io/npm/dm/iobroker.treebuilder.svg)](https://www.npmjs.com/package/iobroker.treebuilder)
-![Number of Installations](https://iobroker.live/badges/treebuilder-installed.svg)
-![Current version in stable repository](https://iobroker.live/badges/treebuilder-stable.svg)
-[![Dependency Status](https://img.shields.io/david/tyantreides/iobroker.treebuilder.svg)](https://david-dm.org/tyantreides/iobroker.treebuilder)
+<!-- ![Number of Installations](https://iobroker.live/badges/treebuilder-installed.svg)-->
+<!--![Current version in stable repository](https://iobroker.live/badges/treebuilder-stable.svg)-->
+<!--[![Dependency Status](https://img.shields.io/david/tyantreides/iobroker.treebuilder.svg)](https://david-dm.org/tyantreides/iobroker.treebuilder)-->
 
 [![NPM](https://nodei.co/npm/iobroker.treebuilder.png?downloads=true)](https://nodei.co/npm/iobroker.treebuilder/)
 
@@ -20,9 +20,9 @@ Its main purpose in the first place is to provide structured information about i
 ## Developer manual
 This section is intended for the developer. It can be deleted later
 
-TODO:
+<!--TODO:
 To get your adapter released in ioBroker, please refer to the documentation 
-of [ioBroker.repositories](https://github.com/ioBroker/ioBroker.repositories#requirements-for-adapter-to-get-added-to-the-latest-repository).
+of [ioBroker.repositories](https://github.com/ioBroker/ioBroker.repositories#requirements-for-adapter-to-get-added-to-the-latest-repository).-->
 
 ## Changelog
 <!--

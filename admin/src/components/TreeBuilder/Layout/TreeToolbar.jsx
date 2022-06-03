@@ -29,7 +29,7 @@ const TreeToolbar = ({classes}) => {
                         <div>
                             <IconButton
                                 disabled={false}
-                                onClick={() => { treeBuilderContext.changeState({type: globalActions.SET.DIALOG.TREEELEMENTS.VISIBLE, payload: true}); }}>
+                                onClick={() => { treeBuilderContext.changeState({type: globalActions.SET.DIALOG.TREEELEMENTS.NEW.VISIBLE, payload: true}); }}>
                                 <IconAdd />
                             </IconButton>
                         </div>

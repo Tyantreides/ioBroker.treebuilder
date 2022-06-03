@@ -35,6 +35,12 @@ const TreeItem = ({items, item, classes}) => {
         treeBuilderContext.changeState({type: globalActions.SET.TREE.SELECTED, payload: selected});
     };
 
+    const onEdit = (itemId) => {
+        console.log('onEdit');
+        treeBuilderContext.changeState({type: globalActions.SET.DIALOG.TREEELEMENTS.EDIT.ITEM, payload: itemId});
+        treeBuilderContext.changeState({type: globalActions.SET.DIALOG.TREEELEMENTS.EDIT.VISIBLE, payload: true});
+    };
+
     const renderTreeType = (itemType) => {
         return treeTypes.find(t => t.name === itemType)?.label;
     };
@@ -113,7 +119,7 @@ const TreeItem = ({items, item, classes}) => {
                         <Tooltip title="editieren">
                             <IconButton
                                 size="small"
-                                onClick={() => {/*  edit handle */}}>
+                                onClick={() => {onEdit(item.native.id);}}>
                                 <IconEdit />
                             </IconButton>
                         </Tooltip>

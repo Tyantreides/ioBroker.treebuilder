@@ -18,8 +18,13 @@ export const globalActions = {
         ISRELOADING: 'GLOBAL_SET_ISRELOADING',
         DIALOG: {
             TREEELEMENTS: {
-                VISIBLE: 'GLOBAL_SET_DIALOG_TREEELEMENTS_VISIBLE',
-                ACTION: 'GLOBAL_SET_DIALOG_TREEELEMENTS_ACTION'
+                NEW: {
+                    VISIBLE: 'GLOBAL_SET_DIALOG_TREEELEMENTS_NEW_VISIBLE',
+                },
+                EDIT: {
+                    VISIBLE: 'GLOBAL_SET_DIALOG_TREEELEMENTS_EDIT_VISIBLE',
+                    ITEM: 'GLOBAL_SET_DIALOG_TREEELEMENTS_EDIT_ITEM',
+                }
             },
             TREETYPES: {
                 VISIBLE: 'GLOBAL_SET_DIALOG_TREETYPES_VISIBLE',

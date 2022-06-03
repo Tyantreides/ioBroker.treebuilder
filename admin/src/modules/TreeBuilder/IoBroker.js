@@ -14,7 +14,7 @@ export default class ioBroker {
         // console.log('[ioBroker]: fetchEnums')
         return await this.socket.getEnums();
     }
-    async createObject(options) {
+    async saveObject(options) {
         const obj = {
             _id: options.id,
             common: {
