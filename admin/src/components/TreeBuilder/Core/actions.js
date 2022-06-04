@@ -24,7 +24,11 @@ export const globalActions = {
                 EDIT: {
                     VISIBLE: 'GLOBAL_SET_DIALOG_TREEELEMENTS_EDIT_VISIBLE',
                     ITEM: 'GLOBAL_SET_DIALOG_TREEELEMENTS_EDIT_ITEM',
-                }
+                },
+                DELETE: {
+                    VISIBLE: 'GLOBAL_SET_DIALOG_TREEELEMENTS_DELETE_VISIBLE',
+                    ITEM: 'GLOBAL_SET_DIALOG_TREEELEMENTS_DELETE_ITEM',
+                },
             },
             TREETYPES: {
                 VISIBLE: 'GLOBAL_SET_DIALOG_TREETYPES_VISIBLE',

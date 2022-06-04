@@ -19,11 +19,13 @@ import TreeItem from './TreeItem';
 import TreeElementNewDialog from '../Dialog/TreeElementNewDialog';
 import TreeElementEditDialog from '../Dialog/TreeElementEditDialog';
 import EventEmitter from '../Core/EventEmitter';
+import TreeElementDeleteDialog from '../Dialog/TreeElementDeleteDialog';
 
 const TreeTable = ({classes}) => {
     const treeBuilderContext = useContext(TreeBuilderContext);
     const isNewDialogVisible = treeBuilderContext.state.dialog.treeElements.new.visible;
     const isEditDialogVisible = treeBuilderContext.state.dialog.treeElements.edit.visible;
+    const isDeleteDialogVisible = treeBuilderContext.state.dialog.treeElements.delete.visible;
 
 
     const releadTree = () => {
@@ -32,6 +34,7 @@ const TreeTable = ({classes}) => {
 
     const newCallback = () => {releadTree();};
     const editCallback = () => {releadTree();};
+    const deleteCallback = () => {releadTree();};
 
     const renderAllItems = (items) => {
         return items
@@ -61,6 +64,7 @@ const TreeTable = ({classes}) => {
             </Paper>
             {isNewDialogVisible ? <TreeElementNewDialog saveCallback={newCallback} /> : null}
             {isEditDialogVisible ? <TreeElementEditDialog saveCallback={editCallback} /> : null}
+            {isDeleteDialogVisible ? <TreeElementDeleteDialog saveCallback={deleteCallback} /> : null}
         </>
     );
 };

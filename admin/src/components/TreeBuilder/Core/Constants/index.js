@@ -32,7 +32,11 @@ export const initialState = {
             edit: {
                 visible: false,
                 item: false
-            }
+            },
+            delete: {
+                visible: false,
+                item: false
+            },
         },
         treeTypes: {
             visible: false,

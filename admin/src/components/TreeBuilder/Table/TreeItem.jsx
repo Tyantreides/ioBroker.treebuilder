@@ -36,9 +36,13 @@ const TreeItem = ({items, item, classes}) => {
     };
 
     const onEdit = (itemId) => {
-        console.log('onEdit');
         treeBuilderContext.changeState({type: globalActions.SET.DIALOG.TREEELEMENTS.EDIT.ITEM, payload: itemId});
         treeBuilderContext.changeState({type: globalActions.SET.DIALOG.TREEELEMENTS.EDIT.VISIBLE, payload: true});
+    };
+
+    const onDelete = (itemId) => {
+        treeBuilderContext.changeState({type: globalActions.SET.DIALOG.TREEELEMENTS.DELETE.ITEM, payload: itemId});
+        treeBuilderContext.changeState({type: globalActions.SET.DIALOG.TREEELEMENTS.DELETE.VISIBLE, payload: true});
     };
 
     const renderTreeType = (itemType) => {
@@ -126,7 +130,7 @@ const TreeItem = ({items, item, classes}) => {
                         <Tooltip title="löschen">
                             <IconButton
                                 size="small"
-                                onClick={() => {/*  delete handle */}}
+                                onClick={() => {onDelete(item.native.id);}}
                             >
                                 <IconDelete />
                             </IconButton>

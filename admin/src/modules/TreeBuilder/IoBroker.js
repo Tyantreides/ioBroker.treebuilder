@@ -32,4 +32,9 @@ export default class ioBroker {
         };
         await this.socket.setObject(options.id, obj);
     }
+
+    async deleteObject(id) {
+        await this.socket.delObject(id);
+    }
+
 }

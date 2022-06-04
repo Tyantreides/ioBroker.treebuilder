@@ -63,3 +63,17 @@ export const getNewItemDepth = (treeBuilderContext) => {
     }
     return 0;
 };
+
+export const resolveChildren = (id, treeItems) => {
+    const treeItemList = [];
+    getChildren(id, treeItems, treeItemList);
+    return treeItemList;
+};
+
+export const getChildren = (id, treeItems, treeItemList) => {
+    const children = treeItems.filter(i => i.native.parentId === id);
+    children.map(c => {
+        treeItemList.push(c);
+        getChildren(c.native.id, treeItems, treeItemList);
+    });
+};
