@@ -17,6 +17,7 @@ import {withStyles} from '@material-ui/core/styles';
 import { styles } from './styles';
 import { TreeBuilderContext } from '../Core/TreeBuilderContext';
 import { globalActions } from '../Core/actions';
+import EventEmitter from '../Core/EventEmitter';
 
 const TreeToolbar = ({classes}) => {
     const treeBuilderContext = useContext(TreeBuilderContext);
@@ -44,7 +45,7 @@ const TreeToolbar = ({classes}) => {
                         </div>
                     </Tooltip> */}
                     <Tooltip title="Neu laden">
-                        <IconButton onClick={() => {/* refresh list handle */}} disabled={false}>
+                        <IconButton onClick={() => {EventEmitter.emit('reloadTree');}} disabled={false}>
                             {<IconRefresh />}
                         </IconButton>
                     </Tooltip>
