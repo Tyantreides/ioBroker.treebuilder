@@ -35,6 +35,18 @@ const TreeToolbar = ({classes}) => {
                             </IconButton>
                         </div>
                     </Tooltip>
+                    <Tooltip title="Neue Verknüpfung hinzufügen">
+                        <div>
+                            <IconButton
+                                disabled={false}
+                                onClick={() => { 
+                                        console.log('create link clicked')
+                                        treeBuilderContext.changeState({type: globalActions.SET.DIALOG.TREEELEMENTS.CREATELINK.VISIBLE, payload: true}); 
+                                    }}>
+                                <IconAdd />
+                            </IconButton>
+                        </div>
+                    </Tooltip>
                     {/* <Tooltip title="Element Typen bearbeiten">
                         <div>
                             <IconButton
