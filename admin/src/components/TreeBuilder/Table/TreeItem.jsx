@@ -14,6 +14,8 @@ import {withStyles} from '@material-ui/core/styles';
 
 import {FaFolder as IconFolder, FaFolderOpen as IconFolderOpened} from 'react-icons/fa';
 import {MdDelete as IconDelete, MdModeEdit as IconEdit} from 'react-icons/md';
+import { MdChevronRight as IconClosed } from "react-icons/md";
+import { MdExpandMore as IconOpen } from "react-icons/md";
 import IconButton from '@material-ui/core/IconButton';
 
 import clsx from 'clsx';
@@ -101,7 +103,7 @@ const TreeItem = ({items, item, classes}) => {
                 >
                     <div className={classes.displayFlex}>
                         <ListItemIcon className={classes.iconStyle}>
-                            {isExpanded ? <IconFolderOpened onClick={() => toggleExpanded(item._id)} style={iconStyle} /> : <IconFolder onClick={() => toggleExpanded(item._id)} style={iconStyle} />}
+                            {isExpanded ? <IconOpen onClick={() => toggleExpanded(item._id)} style={iconStyle} /> : <IconClosed onClick={() => toggleExpanded(item._id)} style={iconStyle} />}
                             {item.type === 'channel' && item.icon &&
                         <div className={clsx(isExpanded && classes.iconOpen)} onClick={() => toggleExpanded(item._id)}>
                             <Icon className={classes.iconCommon} onClick={() => toggleExpanded(item._id)} alt={item.type} src={item.icon} />
