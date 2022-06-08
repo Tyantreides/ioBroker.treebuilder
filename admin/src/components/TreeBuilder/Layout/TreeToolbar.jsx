@@ -8,9 +8,12 @@ import React, {useContext} from 'react';
 import IconButton from '@material-ui/core/IconButton';
 import { MdAdd as IconAdd } from 'react-icons/md';
 import { MdRefresh as IconRefresh } from 'react-icons/md';
+import { MdAddLink as IconAddLink } from 'react-icons/md';
 //import { MdAutoAwesomeMotion as IconTypes } from 'react-icons/md'
 import { FaFolderOpen as IconFolderOpened } from 'react-icons/fa';
 import { FaFolder as IconFolder } from 'react-icons/fa';
+
+
 import { Toolbar, Tooltip } from '@material-ui/core';
 import {withStyles} from '@material-ui/core/styles';
 
@@ -43,7 +46,7 @@ const TreeToolbar = ({classes}) => {
                                         console.log('create link clicked')
                                         treeBuilderContext.changeState({type: globalActions.SET.DIALOG.TREEELEMENTS.CREATELINK.VISIBLE, payload: true}); 
                                     }}>
-                                <IconAdd />
+                                <IconAddLink />
                             </IconButton>
                         </div>
                     </Tooltip>

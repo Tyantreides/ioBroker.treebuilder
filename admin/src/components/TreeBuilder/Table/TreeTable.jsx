@@ -40,6 +40,7 @@ const TreeTable = ({classes}) => {
     const newCallback = () => {releadTree();};
     const editCallback = () => {releadTree();};
     const deleteCallback = () => {releadTree();};
+    const createLinkCallback = () => {releadTree();};
 
     const renderAllItems = (items) => {
         return items
@@ -70,7 +71,7 @@ const TreeTable = ({classes}) => {
             {isNewDialogVisible ? <TreeElementNewDialog saveCallback={newCallback} /> : null}
             {isEditDialogVisible ? <TreeElementEditDialog saveCallback={editCallback} /> : null}
             {isDeleteDialogVisible ? <TreeElementDeleteDialog saveCallback={deleteCallback} /> : null}
-            {isCreateLinkDialogVisible ? <CreateLinkDialog saveCallback={() => {}} /> : null}
+            {isCreateLinkDialogVisible ? <CreateLinkDialog saveCallback={createLinkCallback} /> : null}
         </>
     );
 };

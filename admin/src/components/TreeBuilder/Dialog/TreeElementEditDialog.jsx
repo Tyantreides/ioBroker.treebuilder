@@ -78,6 +78,7 @@ const TreeElementEditDialog = ({closeCallback = false, saveCallback = false, cla
                     onChange={e => {
                         onChangeType(e.target.value);
                     }}
+                    disabled={itemState.native?.type === treeTypes.find(t => t.name === 'link')?.name ? true : false}
                 >
                     {treeTypes.map(treeType => {
                         return (

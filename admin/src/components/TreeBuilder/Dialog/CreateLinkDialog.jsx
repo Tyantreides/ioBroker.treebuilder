@@ -27,9 +27,10 @@
  import { treeTypes } from '../Core/Constants/TreeTypes';
 
  import DialogSelectID from '@iobroker/adapter-react/Dialogs/SelectID';
-import { IconButton, InputBase, Paper } from '@material-ui/core';
+import { FormGroup, IconButton, InputBase, Paper } from '@material-ui/core';
 import SearchIcon from '@material-ui/icons/Search';
 import { MdAdd as IconAdd } from 'react-icons/md';
+import StateSelector from './components/StateSelector';
  
  const CreateLinkDialog = ({closeCallback = false, saveCallback = false, classes}) => {
  
@@ -78,8 +79,8 @@ import { MdAdd as IconAdd } from 'react-icons/md';
          }
          item.native.id = item.id;
          item.native.depth = Tools.getNewItemDepth(treeBuilderContext);
-         console.log('Create Link dialog onSave:')
-         console.log(item)
+        //  console.log('Create Link dialog onSave:')
+        //  console.log(item)
          treeBuilderContext.iobData.saveObject(item);
          treeBuilderContext.changeState({type: globalActions.SET.TREE.SELECTED, payload: item.native.id});
          saveCallback ? saveCallback(item) : null;
@@ -105,37 +106,28 @@ import { MdAdd as IconAdd } from 'react-icons/md';
                  <DialogTitle className={classes.titleBackground} classes={{ root: classes.titleColor }} id="edit-device-dialog-title">
                      {<div>Neue Verknüpfung erstellen: <b>{itemState.common.name}</b></div>}
                  </DialogTitle>
-                 <DialogContent className={classes.container}>
-                     <div className={classes.blockFields}>
-                         <TextField
-                             fullWidth
+                 <DialogContent >
+                     <div style={{display: "flex", flexDirection: "row", justifyContent:"space-around"}}>
+                        <TextField
                              label={'Name'}
-                             className={classes.name}
+                             className={classes.input}
                              value={itemState.common.name}
                              onChange={e => onChangeName(e.target.value)
                              }
                              margin="normal"
-                         />
-                         
-                        <Paper>
-                            <TextField
-                                label={'Verknüpfung'}
-                                className={classes.name}
-                                value={itemState.native.link.target ? itemState.native.link.target : 'Bitte wählen...'}
-                                //  onChange={e => onChangeName(e.target.value)}
-                                margin="normal"
-                                onFocus={() => {showStateSelector}}
-                            />
-                            <InputBase
-                                className={classes.name}
-                                value={itemState.native.link.target ? itemState.native.link.target : ''}
-                                placeholder="Bitte wählen..."
-                            />
-                            <IconButton className={classes.iconButton} aria-label="Wählen" onClick={showStateSelector}>
-                                <SearchIcon />
-                            </IconButton>
-                        </Paper>
-                     </div>
+                        />
+                        <TextField
+                            label={'Verknüpfung'}
+                            className={classes.input}
+                            value={itemState.native.link.target ? itemState.native.link.target : 'Bitte wählen...'}
+                            //  onChange={e => onChangeName(e.target.value)}
+                            margin="normal"
+                            disabled
+                        />
+                        <StateSelector 
+                            onSelect={onChangeTarget} 
+                        />
+                        </div>
                  </DialogContent>
                  <DialogActions>
                      <Button
