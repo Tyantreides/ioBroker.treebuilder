@@ -111,7 +111,7 @@ const TreeItem = ({items, item, classes}) => {
                 >
                     <div className={classes.displayFlex}>
                         <ListItemIcon className={classes.iconStyle}>
-                            {isExpanded ? <IconOpen onClick={() => toggleExpanded(item._id)} style={iconStyle} /> : <IconClosed onClick={() => toggleExpanded(item._id)} style={iconStyle} />}
+                            {isExpanded ? <IconOpen onClick={() => toggleExpanded(item._id, isExpanded)} style={iconStyle} /> : <IconClosed onClick={() => toggleExpanded(item._id, isExpanded)} style={iconStyle} />}
                             {item.type === 'channel' && item.icon &&
                         <div className={clsx(isExpanded && classes.iconOpen)} onClick={() => toggleExpanded(item._id, isExpanded)}>
                             <Icon className={classes.iconCommon} onClick={() => toggleExpanded(item._id, isExpanded)} alt={item.type} src={item.icon} />
