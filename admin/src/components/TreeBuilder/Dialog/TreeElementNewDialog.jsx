@@ -68,6 +68,7 @@ const TreeElementNewDialog = ({closeCallback = false, saveCallback = false, clas
         item.id = generateIoBrokerId();
         if (treeBuilderContext.state.tree.selectedItem) {
             item.native.parentId = treeBuilderContext.state.tree.selectedItem;
+            treeBuilderContext.changeState({type: globalActions.SET.TREE.EXPANDED.ADD, payload: item.native.parentId});
         }
         item.native.id = item.id;
         item.native.depth = Tools.getNewItemDepth(treeBuilderContext);
