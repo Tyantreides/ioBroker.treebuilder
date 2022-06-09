@@ -80,6 +80,18 @@ export const Reducer = (state, action) => {
             // console.log('[globalActions.SET.TREE.SELECTED]:')
             currentState.tree.selectedItem = action.payload;
             return currentState;
+        case globalActions.SET.TREE.EXPANDED.SET:
+            // console.log('[globalActions.SET.TREE.SELECTED]:')
+            currentState.tree.expandedItems = action.payload;
+            return currentState;
+        case globalActions.SET.TREE.EXPANDED.ADD:
+            // console.log('[globalActions.SET.TREE.SELECTED]:')
+            currentState.tree.expandedItems.push(action.payload);
+            return currentState;
+        case globalActions.SET.TREE.EXPANDED.REMOVE:
+            // console.log('[globalActions.SET.TREE.SELECTED]:')
+            currentState.tree.expandedItems = currentState.tree.expandedItems.filter(e => e !== action.payload);
+            return currentState;
         default:
             return state;
     }

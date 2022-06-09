@@ -25,10 +25,16 @@ import { globalActions } from '../Core/actions';
 import { treeTypes } from '../Core/Constants/TreeTypes';
 
 const TreeItem = ({items, item, classes}) => {
+    console.log('[TreeItem]:')
+    console.log(item)
     const treeBuilderContext = useContext(TreeBuilderContext);
 
-    const toggleExpanded = (itemId) => {
+    const toggleExpanded = (itemId, isExpanded) => {
         console.log(itemId);
+        isExpanded 
+            ? treeBuilderContext.changeState({type: globalActions.SET.TREE.EXPANDED.REMOVE, payload: itemId}) 
+            : treeBuilderContext.changeState({type: globalActions.SET.TREE.EXPANDED.ADD, payload: itemId})
+        
     };
 
     const onSelect = (selected) => {
@@ -51,8 +57,10 @@ const TreeItem = ({items, item, classes}) => {
 
 
     const renderRow = (items, item) => {
+        const isExpanded = treeBuilderContext.state.tree.expandedItems.includes(item._id);
         const children = items.filter(i => i.native.parentId === item.native.id);
-        const isExpanded = true;
+        console.log('[TreeItem]: renderRow: isExpanded:');
+        console.log(treeBuilderContext.state.tree.expandedItems);
 
         const depthPx = item.native.depth * 20 + 10;
 
@@ -101,10 +109,10 @@ const TreeItem = ({items, item, classes}) => {
                 >
                     <div className={classes.displayFlex}>
                         <ListItemIcon className={classes.iconStyle}>
-                            {isExpanded ? <IconFolderOpened onClick={() => toggleExpanded(item._id)} style={iconStyle} /> : <IconFolder onClick={() => toggleExpanded(item._id)} style={iconStyle} />}
+                            {isExpanded ? <IconFolderOpened onClick={() => toggleExpanded(item._id, isExpanded)} style={iconStyle} /> : <IconFolder onClick={() => toggleExpanded(item._id, isExpanded)} style={iconStyle} />}
                             {item.type === 'channel' && item.icon &&
-                        <div className={clsx(isExpanded && classes.iconOpen)} onClick={() => toggleExpanded(item._id)}>
-                            <Icon className={classes.iconCommon} onClick={() => toggleExpanded(item._id)} alt={item.type} src={item.icon} />
+                        <div className={clsx(isExpanded && classes.iconOpen)} onClick={() => toggleExpanded(item._id, isExpanded)}>
+                            <Icon className={classes.iconCommon} onClick={() => toggleExpanded(item._id, isExpanded)} alt={item.type} src={item.icon} />
                         </div>}
                         </ListItemIcon>
                         <Tooltip title={<div><div>{`${item.native.name}`}</div></div>}>
@@ -141,7 +149,10 @@ const TreeItem = ({items, item, classes}) => {
             </TableRow>;
 
         const result = [itemRow];
-        children.forEach(it => result.push(renderRow(items, it)));
+        if (isExpanded) {
+            children.forEach(it => result.push(renderRow(items, it)));
+        }
+        
         return result;
     };
     return renderRow(items,item);

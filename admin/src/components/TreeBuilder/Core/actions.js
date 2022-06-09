@@ -36,7 +36,12 @@ export const globalActions = {
             VISIBLE: 'GLOBAL_SET_DIALOG_VISIBLE',
         },
         TREE: {
-            SELECTED: 'GLOBAL_SET_TREE_SELECTED'
+            SELECTED: 'GLOBAL_SET_TREE_SELECTED',
+            EXPANDED: {
+                SET: 'GLOBAL_TREE_EXPANDED_SET',
+                ADD: 'GLOBAL_TREE_EXPANDED_ADD',
+                REMOVE: 'GLOBAL_TREE_EXPANDED_REMOVE',
+            }
         }
     }
 };
