@@ -55,7 +55,7 @@ export const treeTypes = [
         icon: null,
     },
     {
-        name: 'alias',
+        name: 'link',
         label: 'Verknüpfung',
         description: 'z.B. Zustandsverknüpfung',
         color: false,

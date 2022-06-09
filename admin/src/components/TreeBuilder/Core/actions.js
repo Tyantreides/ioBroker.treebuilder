@@ -17,6 +17,9 @@ export const globalActions = {
         ISFETCHING: 'GLOBAL_SET_ISFETCHING',
         ISRELOADING: 'GLOBAL_SET_ISRELOADING',
         DIALOG: {
+            SELECTID: {
+                VISIBLE: 'GLOBAL_SET_DIALOG_SELECTID_VISIBLE',
+            },
             TREEELEMENTS: {
                 NEW: {
                     VISIBLE: 'GLOBAL_SET_DIALOG_TREEELEMENTS_NEW_VISIBLE',
@@ -28,6 +31,9 @@ export const globalActions = {
                 DELETE: {
                     VISIBLE: 'GLOBAL_SET_DIALOG_TREEELEMENTS_DELETE_VISIBLE',
                     ITEM: 'GLOBAL_SET_DIALOG_TREEELEMENTS_DELETE_ITEM',
+                },
+                CREATELINK: {
+                    VISIBLE: 'GLOBAL_SET_DIALOG_TREEELEMENTS_CREATELINK_VISIBLE',
                 },
             },
             TREETYPES: {

@@ -27,6 +27,7 @@ export default class ioBroker {
                 parentId: options.native.parentId,
                 type: options.native.type,
                 depth: options.native.depth,
+                link: options.native.link,
             },
             type: options.type
         };

@@ -45,8 +45,15 @@ export const Reducer = (state, action) => {
         case globalActions.SET.DIALOG.VISIBLE:
             currentState.dialog.visible = action.payload;
             return currentState;
+        case globalActions.SET.DIALOG.SELECTID.VISIBLE:
+            console.log('[Reducer]: globalActions.SET.DIALOG.SELECTID.VISIBLE set to:'+action.payload)
+            currentState.dialog.selectId.visible = action.payload;
+            return currentState;
         case globalActions.SET.DIALOG.TREEELEMENTS.NEW.VISIBLE:
             currentState.dialog.treeElements.new.visible = action.payload;
+            return currentState;
+        case globalActions.SET.DIALOG.TREEELEMENTS.CREATELINK.VISIBLE:
+            currentState.dialog.treeElements.createLink.visible = action.payload;
             return currentState;
         case globalActions.SET.DIALOG.TREEELEMENTS.EDIT.VISIBLE:
             currentState.dialog.treeElements.edit.visible = action.payload;

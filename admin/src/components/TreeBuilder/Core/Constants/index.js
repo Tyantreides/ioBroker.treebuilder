@@ -25,6 +25,9 @@ export const initialState = {
         windowWidth: 1980,
     },
     dialog: {
+        selectId: {
+            visible: false,
+        },
         treeElements: {
             new: {
                 visible: false
@@ -37,6 +40,9 @@ export const initialState = {
                 visible: false,
                 item: false
             },
+            createLink: {
+                visible: false,
+            }
         },
         treeTypes: {
             visible: false,

@@ -17,8 +17,14 @@ export const defaultItem = {
         'name': 'Neues Element', //treebuilder name
         'parentId': 'root', // id of treebuilder parent element
         'depth': 0,
+        'link': null,
     }
 };
+
+export const defaultLink = {
+    name: '',
+    target: null,
+}
 
 export const defaultType = {
     'id': '',
