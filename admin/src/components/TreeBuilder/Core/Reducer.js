@@ -55,6 +55,9 @@ export const Reducer = (state, action) => {
         case globalActions.SET.DIALOG.TREEELEMENTS.CREATELINK.VISIBLE:
             currentState.dialog.treeElements.createLink.visible = action.payload;
             return currentState;
+        case globalActions.SET.DIALOG.TREEELEMENTS.CREATEDEVICE.VISIBLE:
+            currentState.dialog.treeElements.createDevice.visible = action.payload;
+            return currentState;
         case globalActions.SET.DIALOG.TREEELEMENTS.EDIT.VISIBLE:
             currentState.dialog.treeElements.edit.visible = action.payload;
             return currentState;

@@ -23,6 +23,7 @@ import TreeElementDeleteDialog from '../Dialog/TreeElementDeleteDialog';
 //import DialogImporter from '../Dialog/DialogImporter';
 import DialogSelectID from '@iobroker/adapter-react/Dialogs/SelectID';
 import CreateLinkDialog from '../Dialog/CreateLinkDialog';
+import CreateDeviceDialog from '../Dialog/CreateDeviceDialog';
 
 
 const TreeTable = ({classes}) => {
@@ -31,6 +32,7 @@ const TreeTable = ({classes}) => {
     const isEditDialogVisible = treeBuilderContext.state.dialog.treeElements.edit.visible;
     const isDeleteDialogVisible = treeBuilderContext.state.dialog.treeElements.delete.visible;
     const isCreateLinkDialogVisible = treeBuilderContext.state.dialog.treeElements.createLink.visible;
+    const isCreateDeviceDialogVisible = treeBuilderContext.state.dialog.treeElements.createDevice.visible;
 
 
     const releadTree = () => {
@@ -41,6 +43,7 @@ const TreeTable = ({classes}) => {
     const editCallback = () => {releadTree();};
     const deleteCallback = () => {releadTree();};
     const createLinkCallback = () => {releadTree();};
+    const createDeviceCallback = () => {releadTree();};
 
     const renderAllItems = (items) => {
         return items
@@ -72,6 +75,7 @@ const TreeTable = ({classes}) => {
             {isEditDialogVisible ? <TreeElementEditDialog saveCallback={editCallback} /> : null}
             {isDeleteDialogVisible ? <TreeElementDeleteDialog saveCallback={deleteCallback} /> : null}
             {isCreateLinkDialogVisible ? <CreateLinkDialog saveCallback={createLinkCallback} /> : null}
+            {isCreateDeviceDialogVisible ? <CreateDeviceDialog saveCallback={createDeviceCallback} /> : null}
         </>
     );
 };

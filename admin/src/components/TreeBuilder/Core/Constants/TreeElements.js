@@ -22,20 +22,53 @@ export const defaultItem = {
 };
 
 export const defaultLink = {
-    name: '',
-    target: null,
+    ...defaultItem,
+    native: {
+        ...defaultItem.native,
+        target: null
+    }
 }
 
-export const defaultType = {
-    'id': '',
-    'name': '',
-    'label': '',
-    'icon': ''
-};
+export const defaultDevice = {
+    ...defaultItem,
+    native: {
+        ...defaultItem.native,
+        exports: [],
+        modifiers: [],
+        imports: [],
+    }
+}
 
-export const basicType = {
-    'id': '',
-    'name': 'room',
-    'label': 'Raum',
-    'icon': ''
-};
+export const defaultDeviceExport = {
+    id: '',
+    label: 'Export',
+    src: '',
+    type: ''
+}
+
+export const defaultDeviceImport = {
+    id: '',
+    label: 'Import',
+    linkId: false,
+    type: ''
+}
+
+export const defaultModifierLink = {
+    id: '',
+    from: [],
+    to: [],
+    modifier: 'none'
+    // conversion: 'none', //+, -, *, /, !
+    // aggregation: 'none', 
+    // split: 'none'
+}
+
+export const defaultDeviceModifier = {
+    id: '',
+    imports: [],
+    exports: [],
+    links: [],
+}
+
+
+

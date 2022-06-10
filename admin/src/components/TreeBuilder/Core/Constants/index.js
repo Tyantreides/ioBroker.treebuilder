@@ -42,6 +42,9 @@ export const initialState = {
             },
             createLink: {
                 visible: false,
+            },
+            createDevice: {
+                visible: false,
             }
         },
         treeTypes: {

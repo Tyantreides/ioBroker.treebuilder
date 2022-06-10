@@ -50,6 +50,18 @@ const TreeToolbar = ({classes}) => {
                             </IconButton>
                         </div>
                     </Tooltip>
+                    <Tooltip title="Neues Gerät hinzufügen">
+                        <div>
+                            <IconButton
+                                disabled={false}
+                                onClick={() => { 
+                                        console.log('create device clicked')
+                                        treeBuilderContext.changeState({type: globalActions.SET.DIALOG.TREEELEMENTS.CREATEDEVICE.VISIBLE, payload: true}); 
+                                    }}>
+                                <IconAddLink />
+                            </IconButton>
+                        </div>
+                    </Tooltip>
                     {/* <Tooltip title="Element Typen bearbeiten">
                         <div>
                             <IconButton

@@ -18,7 +18,7 @@
  
  import { styles } from './styles';
  import { useState } from 'react';
- import { defaultItem, defaultLink } from '../Core/Constants/TreeElements';
+ import { defaultLink } from '../Core/Constants/TreeElements';
  import { useContext } from 'react';
  import { TreeBuilderContext } from '../Core/TreeBuilderContext';
  import { globalActions } from '../Core/actions';
@@ -40,10 +40,9 @@ import StateSelector from './components/StateSelector';
  
      const getNewLink = () => {
         const linkType = treeTypes.find(t => t.name === 'link');
-        const newLink = Tools.cloneObject({...defaultItem});
+        const newLink = Tools.cloneObject({...defaultLink});
         newLink.common.role = linkType.name;
         newLink.native.type = linkType.name;
-        newLink.native.link = Tools.cloneObject({...defaultLink});
         return newLink;
      };
  
@@ -61,7 +60,7 @@ import StateSelector from './components/StateSelector';
 
      const onChangeTarget = (targetId) => {
         changeItemState((oldState) => {
-            return {...oldState, native: {...oldState.native, link: {...oldState.native.link, target: targetId}}};
+            return {...oldState, native: {...oldState.native, target: targetId}};
         });
      }
  
@@ -86,11 +85,6 @@ import StateSelector from './components/StateSelector';
          saveCallback ? saveCallback(item) : null;
          onClose();
      };
-
-     const showStateSelector = (e) => {
-         console.log('showstateselector');
-         treeBuilderContext.changeState({type: globalActions.SET.DIALOG.SELECTID.VISIBLE, payload: true});
-     }
  
      return (
          <>
@@ -119,7 +113,7 @@ import StateSelector from './components/StateSelector';
                         <TextField
                             label={'Verknüpfung'}
                             className={classes.input}
-                            value={itemState.native.link.target ? itemState.native.link.target : 'Bitte wählen...'}
+                            value={itemState.native.target ? itemState.native.target : 'Bitte wählen...'}
                             //  onChange={e => onChangeName(e.target.value)}
                             margin="normal"
                             disabled

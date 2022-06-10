@@ -35,6 +35,9 @@ export const globalActions = {
                 CREATELINK: {
                     VISIBLE: 'GLOBAL_SET_DIALOG_TREEELEMENTS_CREATELINK_VISIBLE',
                 },
+                CREATEDEVICE: {
+                    VISIBLE: 'GLOBAL_SET_DIALOG_TREEELEMENTS_CREATEDEVICE_VISIBLE',
+                },
             },
             TREETYPES: {
                 VISIBLE: 'GLOBAL_SET_DIALOG_TREETYPES_VISIBLE',
