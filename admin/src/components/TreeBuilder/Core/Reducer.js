@@ -46,7 +46,7 @@ export const Reducer = (state, action) => {
             currentState.dialog.visible = action.payload;
             return currentState;
         case globalActions.SET.DIALOG.SELECTID.VISIBLE:
-            console.log('[Reducer]: globalActions.SET.DIALOG.SELECTID.VISIBLE set to:'+action.payload)
+            //console.log('[Reducer]: globalActions.SET.DIALOG.SELECTID.VISIBLE set to:'+action.payload)
             currentState.dialog.selectId.visible = action.payload;
             return currentState;
         case globalActions.SET.DIALOG.TREEELEMENTS.NEW.VISIBLE:

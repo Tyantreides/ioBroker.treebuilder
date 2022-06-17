@@ -31,12 +31,12 @@ import { FormGroup, IconButton, InputBase, Paper } from '@material-ui/core';
 import SearchIcon from '@material-ui/icons/Search';
 import { MdAdd as IconAdd } from 'react-icons/md';
 import StateSelector from './components/StateSelector';
+import StateIdSelector from './StateIdSelector';
  
  const CreateLinkDialog = ({closeCallback = false, saveCallback = false, classes}) => {
  
      const treeBuilderContext = useContext(TreeBuilderContext);
-     const isDialogSelectIDVisible = treeBuilderContext.state.dialog.selectId.visible;
-     console.log('CreateLinkDialog: isDialogSelectIDVisible:'+isDialogSelectIDVisible)
+     const [isStateSelectorVisible, setIsStateSelectorVisible] = useState(false);
  
      const getNewLink = () => {
         const linkType = treeTypes.find(t => t.name === 'link');
@@ -62,6 +62,7 @@ import StateSelector from './components/StateSelector';
         changeItemState((oldState) => {
             return {...oldState, native: {...oldState.native, target: targetId}};
         });
+        setIsStateSelectorVisible(false);
      }
  
      const onClose = () => {
@@ -118,9 +119,10 @@ import StateSelector from './components/StateSelector';
                             margin="normal"
                             disabled
                         />
-                        <StateSelector 
-                            onSelect={onChangeTarget} 
-                        />
+                        <IconButton className={classes.iconButton} aria-label="Wählen" onClick={() => {setIsStateSelectorVisible(true)}}>
+                            <SearchIcon />
+                        </IconButton>
+                        {isStateSelectorVisible ? <StateIdSelector target={"createLinkDialog"} onSelect={onChangeTarget} /> : null}
                         </div>
                  </DialogContent>
                  <DialogActions>
@@ -137,17 +139,6 @@ import StateSelector from './components/StateSelector';
                      >Abbrechen</Button>
                  </DialogActions>
              </Dialog>
-             {isDialogSelectIDVisible ? <DialogSelectID 
-                                    key="selectDialog"
-                                    imagePrefix="../.."
-                                    socket={treeBuilderContext.socket}
-                                    dialogName="devicesEdit"
-                                    title={"State hinzufügen"}
-                                    //selected={selected || this.findRealDevice(this.state.selectIdPrefix)}
-                                    statesOnly={true}
-                                    onOk={(id) => {onChangeTarget(id)}}
-                                    onClose={() => {treeBuilderContext.changeState({type: globalActions.SET.DIALOG.SELECTID.VISIBLE, payload: false});}}
-                                    /> : null}
          </>
      );
  };

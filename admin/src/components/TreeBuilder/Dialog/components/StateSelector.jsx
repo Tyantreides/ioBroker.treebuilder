@@ -17,7 +17,7 @@
 import { IconButton, InputBase, Paper } from '@material-ui/core';
 import SearchIcon from '@material-ui/icons/Search';
  
- const StateSelector = ({onSelect,classes}) => {
+ const StateSelector = ({target,onSelect,classes}) => {
     const treeBuilderContext = useContext(TreeBuilderContext);
     const isIoBrokerStateSelectorVisible = treeBuilderContext.state.dialog.selectId.visible;
 
@@ -26,6 +26,7 @@ import SearchIcon from '@material-ui/icons/Search';
     }
 
     const onSelectCallback = (stateId) => {
+        console.log('[StateSelector]: selected ID: '+stateId);
         onSelect(stateId);
     }
  
@@ -35,10 +36,10 @@ import SearchIcon from '@material-ui/icons/Search';
                 <SearchIcon />
             </IconButton>
             {isIoBrokerStateSelectorVisible ? <DialogSelectID 
-                                    key="selectDialog"
+                                    key={target}
                                     imagePrefix="../.."
                                     socket={treeBuilderContext.socket}
-                                    dialogName="devicesEdit"
+                                    dialogName={"Select: "+target}
                                     title={"State hinzufügen"}
                                     //selected={selected || this.findRealDevice(this.state.selectIdPrefix)}
                                     statesOnly={true}

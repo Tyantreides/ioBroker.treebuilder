@@ -33,6 +33,7 @@ import { ListItemText } from '@material-ui/core';
 
 const TreeElementNewDialog = ({closeCallback = false, saveCallback = false, classes}) => {
 
+    console.log(classes)
     const treeBuilderContext = useContext(TreeBuilderContext);
 
     const getNewItem = () => {

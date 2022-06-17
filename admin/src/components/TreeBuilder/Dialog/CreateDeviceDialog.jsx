@@ -6,13 +6,20 @@
  **/
  import React from 'react';
  import { withStyles } from '@material-ui/core/styles';
+ //import { withStyles } from '@mui/styles';
  
- import Button from '@material-ui/core/Button';
+ //import Button from '@material-ui/core/Button';
+ import { Button } from '@mui/material';
  import Dialog from '@material-ui/core/Dialog';
- import DialogActions from '@material-ui/core/DialogActions';
- import DialogContent from '@material-ui/core/DialogContent';
- import DialogTitle from '@material-ui/core/DialogTitle';
+ //import Dialog from '@mui/material/Dialog';
+ //import DialogActions from '@material-ui/core/DialogActions';
+ import DialogActions from '@mui/material/DialogActions';
+ //import DialogContent from '@material-ui/core/DialogContent';
+ import DialogContent from '@mui/material/DialogContent';
+ //import DialogTitle from '@material-ui/core/DialogTitle';
+ import DialogTitle from '@mui/material/DialogTitle';
  import TextField from '@material-ui/core/TextField';
+ //import TextField from '@mui/material/TextField';
  import IconClose from '@material-ui/icons/Close';
  import IconCheck from '@material-ui/icons/Check';
  
@@ -31,6 +38,7 @@ import { FormGroup, Grid, IconButton, InputBase, Paper } from '@material-ui/core
 import SearchIcon from '@material-ui/icons/Search';
 import { MdAdd as IconAdd } from 'react-icons/md';
 import StateSelector from './components/StateSelector';
+import DeviceLinkEditor from './components/DeviceEditor/DeviceLinkEditor'
  
  const CreateDeviceDialog = ({closeCallback = false, saveCallback = false, classes}) => {
  
@@ -46,8 +54,8 @@ import StateSelector from './components/StateSelector';
      };
  
      const [itemState, changeItemState] = useState(getNewDevice());
-     console.log('[CreateDeviceDialog]: itemState:');
-     console.log(itemState);
+    //  console.log('[CreateDeviceDialog]: itemState:');
+    //  console.log(itemState);
  
      const generateIoBrokerId = () => {
          return `${treeBuilderContext.state.adapterName}.${treeBuilderContext.state.adapterInstance}.${uuidv4()}`;
@@ -91,7 +99,7 @@ import StateSelector from './components/StateSelector';
         <>
             <Dialog
                 open={true}
-                maxWidth="md"
+                maxWidth="xl"
                 fullWidth={true}
                 onClose={() => { onClose(); }}
                 aria-labelledby="alert-dialog-title"
@@ -101,60 +109,8 @@ import StateSelector from './components/StateSelector';
                 <DialogTitle className={classes.titleBackground} classes={{ root: classes.titleColor }} id="edit-device-dialog-title">
                     {<div>Neues Gerät erstellen: <b>{itemState.common.name}</b></div>}
                 </DialogTitle>
-                <DialogContent >
-                    <Grid 
-                        container 
-                        spacing={3}
-                        direction="row"
-                        justifyContent="space-around"
-                        alignItems="flex-start"
-                    >
-                        <Grid item xs={12}>
-                            <Paper className={classes.paper}>xs=12</Paper>
-                        </Grid>
-                        <Grid item xs={4}>
-                            <Grid container justifyContent='center'>
-                                <Grid item xs={12}>
-                                    <IconButton>
-                                        <IconAdd />
-                                    </IconButton>    
-                                </Grid>
-                                <Grid item xs={12}>
-                                    <Paper className={classes.paper}>
-                                        testitem
-                                    </Paper>
-                                </Grid>
-                            </Grid>
-                        </Grid>
-                        <Grid item xs={4}>
-                            <Grid container justifyContent='center'>
-                                <Grid item xs={12}>
-                                    <IconButton>
-                                        <IconAdd />
-                                    </IconButton>    
-                                </Grid>
-                                <Grid item xs={12}>
-                                    <Paper className={classes.paper}>
-                                        testitem
-                                    </Paper>
-                                </Grid>
-                            </Grid>
-                        </Grid>
-                        <Grid item xs={4}>
-                            <Grid container justifyContent='center'>
-                                <Grid item xs={12}>
-                                    <IconButton>
-                                        <IconAdd />
-                                    </IconButton>    
-                                </Grid>
-                                <Grid item xs={12}>
-                                    <Paper className={classes.paper}>
-                                        testitem
-                                    </Paper>
-                                </Grid>
-                            </Grid>
-                        </Grid>
-                    </Grid>
+                <DialogContent className={classes.container}>
+                   <DeviceLinkEditor classes={classes} />
                 </DialogContent>
                 <DialogActions>
                     <Button

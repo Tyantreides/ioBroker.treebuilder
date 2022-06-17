@@ -27,8 +27,8 @@ import { globalActions } from '../Core/actions';
 import { treeTypes } from '../Core/Constants/TreeTypes';
 
 const TreeItem = ({items, item, classes}) => {
-    console.log('[TreeItem]:')
-    console.log(item)
+    // console.log('[TreeItem]:')
+    // console.log(item)
     const treeBuilderContext = useContext(TreeBuilderContext);
 
     const toggleExpanded = (itemId, isExpanded) => {
@@ -61,8 +61,8 @@ const TreeItem = ({items, item, classes}) => {
     const renderRow = (items, item) => {
         const isExpanded = treeBuilderContext.state.tree.expandedItems.includes(item._id);
         const children = items.filter(i => i.native.parentId === item.native.id);
-        console.log('[TreeItem]: renderRow: isExpanded:');
-        console.log(treeBuilderContext.state.tree.expandedItems);
+        // console.log('[TreeItem]: renderRow: isExpanded:');
+        // console.log(treeBuilderContext.state.tree.expandedItems);
 
         const depthPx = item.native.depth * 20 + 10;
 
