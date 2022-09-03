@@ -38,7 +38,7 @@ import { FormGroup, Grid, IconButton, InputBase, Paper } from '@material-ui/core
 import SearchIcon from '@material-ui/icons/Search';
 import { MdAdd as IconAdd } from 'react-icons/md';
 import StateSelector from './components/StateSelector';
-import DeviceLinkEditor from './components/DeviceEditor/DeviceLinkEditor'
+import DeviceEditor from './components/DeviceEditor/DeviceEditor'
  
  const CreateDeviceDialog = ({closeCallback = false, saveCallback = false, classes}) => {
  
@@ -110,7 +110,7 @@ import DeviceLinkEditor from './components/DeviceEditor/DeviceLinkEditor'
                     {<div>Neues Gerät erstellen: <b>{itemState.common.name}</b></div>}
                 </DialogTitle>
                 <DialogContent className={classes.container}>
-                   <DeviceLinkEditor classes={classes} />
+                   <DeviceEditor classes={classes} />
                 </DialogContent>
                 <DialogActions>
                     <Button

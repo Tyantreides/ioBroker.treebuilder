@@ -10,7 +10,8 @@ import { useState } from 'react';
 import DeviceLinkInput from './DeviceLinkInput';
 import DeviceLinkOutput from './DeviceLinkOutput';
 import DeviceLinkModifier from './DeviceLinkModifier';
-import { Tab, Tabs } from '@material-ui/core';
+import { Fab, Tab, Tabs } from '@material-ui/core';
+import AddIcon from '@mui/icons-material/Add';
 
 const readLinks = [
     {
@@ -73,7 +74,7 @@ function TabPanel(props) {
 }
   
 
-function DeviceLinkEditor({classes}) {
+function DeviceEditor({classes}) {
     const [activeTab, setActiveTab] = useState(0);
     const [deviceLinks, setDeviceLinks] = useState(readLinks);
 
@@ -86,8 +87,9 @@ function DeviceLinkEditor({classes}) {
         <Box width={'100%'}>
             <Divider />
             <Tabs value={activeTab} onChange={handleChange}>
-                <Tab label={'Lesen'} />
-                <Tab label={'Schreiben'} />
+                <Tab label={'Werte'} />
+                <Tab label={'Filter'} disabled />
+                <Tab label={'Trigger'} disabled />
             </Tabs>
 
             <TabPanel activeTab={activeTab} tabIndex={0}>
@@ -95,12 +97,13 @@ function DeviceLinkEditor({classes}) {
                     {deviceLinks.map((deviceLink, index) => (
                         <AppBar key={index} position='relative' style={{margin: '15px', borderRadius: '10px'}}>
                             <Grid container justifyContent={'space-between'}>
-                                <Grid xs={5} item><DeviceLinkInput index={index} link={deviceLink} classes={classes} /></Grid>
-                                <Grid xs={4} item><DeviceLinkModifier link={deviceLink} /></Grid>
-                                <Grid xs={3} item><DeviceLinkOutput link={deviceLink} /></Grid>
+                                <Grid xs={12} item>Werte</Grid>
                             </Grid>
                         </AppBar>
                     ))}
+                    <Fab color="primary" aria-label="add">
+                        <AddIcon />
+                    </Fab>
                 </Box>
             </TabPanel>
 
@@ -109,17 +112,27 @@ function DeviceLinkEditor({classes}) {
                     {deviceLinks.map((deviceLink, index) => (
                         <AppBar key={index} position='relative' style={{margin: '15px', borderRadius: '10px'}}>
                             <Grid container justifyContent={'space-between'}>
-                                <Grid xs={5} item><DeviceLinkInput index={index} link={deviceLink} classes={classes} /></Grid>
-                                <Grid xs={4} item><DeviceLinkModifier link={deviceLink} /></Grid>
-                                <Grid xs={3} item><DeviceLinkOutput link={deviceLink} /></Grid>
+                                <Grid xs={12} item>Filter</Grid>
                             </Grid>
                         </AppBar>
                     ))}
                 </Box>
             </TabPanel>
             
+            <TabPanel activeTab={activeTab} tabIndex={2}>
+                <Box sx={{ width: '100%' }}>
+                    {deviceLinks.map((deviceLink, index) => (
+                        <AppBar key={index} position='relative' style={{margin: '15px', borderRadius: '10px'}}>
+                            <Grid container justifyContent={'space-between'}>
+                                <Grid xs={12} item>Trigger</Grid>
+                            </Grid>
+                        </AppBar>
+                    ))}
+                </Box>
+            </TabPanel>
+
         </Box>
     );
 }
 
-export default DeviceLinkEditor;
+export default DeviceEditor;

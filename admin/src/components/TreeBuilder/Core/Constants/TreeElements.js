@@ -29,46 +29,40 @@ export const defaultLink = {
     }
 }
 
+export const defaultValue = {
+    ...defaultItem,
+    native: {
+        ...defaultItem.native,
+        target: null,
+        read: true,
+        write: true,
+    }
+}
+
+export const defaultFilter = {
+    ...defaultItem,
+    native: {
+        ...defaultItem.native,
+    }
+}
+
+export const defaultTrigger = {
+    ...defaultItem,
+    native: {
+        ...defaultItem.native,
+    }
+}
+
 export const defaultDevice = {
     ...defaultItem,
     native: {
         ...defaultItem.native,
-        exports: [],
-        modifiers: [],
-        imports: [],
+        values: [],
+        filters: [],
+        triggers: []
     }
 }
 
-export const defaultDeviceExport = {
-    id: '',
-    label: 'Export',
-    src: '',
-    type: ''
-}
-
-export const defaultDeviceImport = {
-    id: '',
-    label: 'Import',
-    linkId: false,
-    type: ''
-}
-
-export const defaultModifierLink = {
-    id: '',
-    from: [],
-    to: [],
-    modifier: 'none'
-    // conversion: 'none', //+, -, *, /, !
-    // aggregation: 'none', 
-    // split: 'none'
-}
-
-export const defaultDeviceModifier = {
-    id: '',
-    imports: [],
-    exports: [],
-    links: [],
-}
 
 
 
